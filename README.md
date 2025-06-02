@@ -4,9 +4,9 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 
 ## M001 | ASP.NET Überblick
 
--   [ ] Historie
--   [ ] Projekte und Projektmappen
--   [ ] ASP.Net Core Empty: Hello, World
+-   [x] Historie
+-   [x] Projekte und Projektmappen
+-   [x] ASP.Net Core Empty: Hello, World
 
 ## M002 | Konfiguration
 
