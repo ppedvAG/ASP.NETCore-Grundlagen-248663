@@ -10,23 +10,24 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 
 ## M002 | Konfiguration
 
--   [ ] IOC mittels Dependency Injection
--   [ ] Aufbau appsettings.json
--   [ ] Logging mit Serilog und Filesink
--   [ ] Lab: Dependency Injection OperationService
+-   [x] IOC mittels Dependency Injection
+-   [x] Aufbau appsettings.json
+-   [x] Logging konfigurieren (Files/OTLP)
+-   [x] Lab: Dependency Injection OperationService
 
-## M003 | Model View Controller (MVC)
+## M003 | Controller
+
+-   [ ] Overview
+-   [ ] Recipe Model erstellen
+-   [ ] Recipe Controller erstellen
+-   [ ] Api testen mit [httpFiles](https://learn.microsoft.com/en-us/aspnet/core/test/http-files)
+
+## M004 | Model View Controller (MVC)
 
 -   [ ] Overview
 -   [ ] Links setzen
 -   [ ] Index und Details
 -   [ ] Lab: MovieService und MVC App mit Index und Details
-
-## M004 | Razor Pages
-
--   [ ] Overview
--   [ ] Links setzen
--   [ ] Details
 
 ## M005 | Forms und Validierung
 
@@ -40,7 +41,7 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 -   [ ] Static Files und Directory Browser
 -   [ ] File Provider und Dateizugriff
 -   [ ] [Hoppscotch](https://hoppscotch.io/) (Postman Alternative)
--   [ ] API mit [httpFile testen](https://learn.microsoft.com/de-de/aspnet/core/test/http-files?view=aspnetcore-8.0)
+-   [ ] API mit [httpFile testen](https://learn.microsoft.com/de-de/aspnet/core/test/http-files)
 -   [ ] Api-Key mittels Middleware abfragen
 -   [ ] Lab: Request Culture Middleware
 
@@ -81,7 +82,13 @@ Update-Database
 -   [ ] Controller mit Scaffolding erstellen (Microsoft.EntityFrameworkCore.Design)
 -   [ ] [Northwind DB](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instnwnd.sql)
 
-## M010 | Benutzerverwaltung
+## M010 | Razor Pages
+
+-   [ ] Overview
+-   [ ] Links setzen
+-   [ ] Details
+
+## M011 | Benutzerverwaltung
 
 -   [ ] AspNetCore.Identity.EFCore
 -   [ ] CodeFirst & Migration
@@ -89,7 +96,7 @@ Update-Database
 -   [ ] Form Post & Validierung
 -   [ ] MS Identity Platform gegen EntraId und GraphAPI
 
-## M011 | Weitere Themen
+## M012 | Weitere Themen
 
 -   [ ] Paging
 -   [ ] Lokalisierung
