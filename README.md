@@ -52,7 +52,7 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 -   [ ] MultipartFormDataContent
 -   [ ] HttpContext, Request, Response
 
-## M008 | Entity Framework Code First
+## M008 | EFCore: Code First & Testing
 
 -   [ ] O/R Mapping Framework EFCore
 -   [ ] Code First Ansatz (Entites + DbContext)
@@ -75,12 +75,13 @@ Update-Database
 -   [ ] OrderService anhand von Tests entwickeln
 -   [ ] Dashboard fuer aktuelle Orders anzeigen
 
-## M009 | Entity Framework DB First
+## M009 | Razor Pages & EF Core: DB First
 
+-   [ ] Overview
+-   [ ] [Northwind DB](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instnwnd.sql)
 -   [ ] DB First Ansatz
 -   [ ] VS Extension [EF Core Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools)
 -   [ ] Controller mit Scaffolding erstellen (Microsoft.EntityFrameworkCore.Design)
--   [ ] [Northwind DB](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instnwnd.sql)
 
 ## M010 | Razor Pages
 
@@ -88,7 +89,7 @@ Update-Database
 -   [ ] Links setzen
 -   [ ] Details
 
-## M011 | Benutzerverwaltung
+## M010 | Benutzerverwaltung
 
 -   [ ] AspNetCore.Identity.EFCore
 -   [ ] CodeFirst & Migration
@@ -96,7 +97,7 @@ Update-Database
 -   [ ] Form Post & Validierung
 -   [ ] MS Identity Platform gegen EntraId und GraphAPI
 
-## M012 | Weitere Themen
+## M011 | Weitere Themen
 
 -   [ ] Paging
 -   [ ] Lokalisierung

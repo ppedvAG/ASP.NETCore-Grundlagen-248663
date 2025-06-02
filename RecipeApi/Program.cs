@@ -1,6 +1,5 @@
 
-using BusinessModel.Contracts;
-using BusinessModel.Services;
+using BusinessModel;
 
 namespace RecipeApi
 {
@@ -12,9 +11,12 @@ namespace RecipeApi
 
             // Add services to the container.
 
-            // Wir registrieren das als Singleton, weil wir die Rezpte InMemory halten. 
-            // Sonst wuerden neue Rezepte wieder verschwinden. Deshalb zu Testzwecken ein Singleton.
-            builder.Services.AddSingleton<IRecipeService, SimpleRecipeService>();
+            // Statische Methoden wuerden wir so aufrufen
+            SetupExtensions.AddInMemoryRecipeConfiguration(builder.Services);
+
+            // Weil wir die Methode als Extension Method definiert haben, laesst sie sich auch so aufrufen
+            builder.Services.AddInMemoryRecipeConfiguration();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
