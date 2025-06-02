@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36121.58 d17.14
+VisualStudioVersion = 17.14.36121.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greeter", "Greeter\Greeter.csproj", "{A0E86CE5-A225-4092-9741-5730BAB7C517}"
 EndProject
@@ -17,6 +17,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDependencyInjection", "HelloDependencyInjection\HelloDependencyInjection.csproj", "{4CDC9A88-D664-4815-A06E-A9A8FFD2398E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloOpenTelemetry", "HelloOpenTelemetry\HelloOpenTelemetry.csproj", "{C9BF13AB-9F84-4260-8E01-B371A3F1A346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabDependencyInjection", "LabDependencyInjection\LabDependencyInjection.csproj", "{9282C1B6-5310-B88A-2BB2-C99832B1C352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSeriLog", "LabSeriLog\LabSeriLog.csproj", "{8F3B2493-EB7E-3CBA-0326-BDDBBAD36DD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,14 @@ Global
 		{C9BF13AB-9F84-4260-8E01-B371A3F1A346}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9BF13AB-9F84-4260-8E01-B371A3F1A346}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9BF13AB-9F84-4260-8E01-B371A3F1A346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9282C1B6-5310-B88A-2BB2-C99832B1C352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9282C1B6-5310-B88A-2BB2-C99832B1C352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9282C1B6-5310-B88A-2BB2-C99832B1C352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9282C1B6-5310-B88A-2BB2-C99832B1C352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3B2493-EB7E-3CBA-0326-BDDBBAD36DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3B2493-EB7E-3CBA-0326-BDDBBAD36DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3B2493-EB7E-3CBA-0326-BDDBBAD36DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3B2493-EB7E-3CBA-0326-BDDBBAD36DD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +56,8 @@ Global
 		{A0E86CE5-A225-4092-9741-5730BAB7C517} = {38A0FCD7-B870-421E-8A69-678CD3077A9B}
 		{4CDC9A88-D664-4815-A06E-A9A8FFD2398E} = {276DE548-641D-426D-AE0F-D5F84E871B58}
 		{C9BF13AB-9F84-4260-8E01-B371A3F1A346} = {276DE548-641D-426D-AE0F-D5F84E871B58}
+		{9282C1B6-5310-B88A-2BB2-C99832B1C352} = {276DE548-641D-426D-AE0F-D5F84E871B58}
+		{8F3B2493-EB7E-3CBA-0326-BDDBBAD36DD3} = {276DE548-641D-426D-AE0F-D5F84E871B58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8DF09BE-FE25-4D34-B6EA-070D79C4A0B0}
