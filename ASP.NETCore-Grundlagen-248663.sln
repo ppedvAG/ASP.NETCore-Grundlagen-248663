@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M000", "M000", "{02EA681E-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M001_Vorstellung", "M001_Vorstellung", "{38A0FCD7-B870-421E-8A69-678CD3077A9B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M002_Konfiguration", "M002_Konfiguration", "{276DE548-641D-426D-AE0F-D5F84E871B58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDependencyInjection", "HelloDependencyInjection\HelloDependencyInjection.csproj", "{4CDC9A88-D664-4815-A06E-A9A8FFD2398E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,12 +26,17 @@ Global
 		{A0E86CE5-A225-4092-9741-5730BAB7C517}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0E86CE5-A225-4092-9741-5730BAB7C517}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0E86CE5-A225-4092-9741-5730BAB7C517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CDC9A88-D664-4815-A06E-A9A8FFD2398E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDC9A88-D664-4815-A06E-A9A8FFD2398E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDC9A88-D664-4815-A06E-A9A8FFD2398E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDC9A88-D664-4815-A06E-A9A8FFD2398E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A0E86CE5-A225-4092-9741-5730BAB7C517} = {38A0FCD7-B870-421E-8A69-678CD3077A9B}
+		{4CDC9A88-D664-4815-A06E-A9A8FFD2398E} = {276DE548-641D-426D-AE0F-D5F84E871B58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8DF09BE-FE25-4D34-B6EA-070D79C4A0B0}
