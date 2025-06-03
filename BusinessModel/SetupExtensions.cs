@@ -1,4 +1,5 @@
 ﻿using BusinessModel.Contracts;
+using BusinessModel.Data;
 using BusinessModel.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,5 +16,11 @@ public static class SetupExtensions
         // Sonst wuerden neue Rezepte wieder verschwinden. Deshalb zu Testzwecken ein Singleton.
         services.AddSingleton<IRecipeService, SimpleRecipeService>(); 
         return services;
+    }
+
+    public static void AddLocalDbRecipeConfiguration(this IServiceCollection services, string connectionString)
+    {
+        services.AddSqlServer<DemoMvcDbContext>(connectionString);
+        services.AddTransient<IRecipeService, RecipeService>(); 
     }
 }

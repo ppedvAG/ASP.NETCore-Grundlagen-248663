@@ -11,7 +11,12 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
-        builder.Services.AddInMemoryRecipeConfiguration();
+        // In Memory Demo
+        //builder.Services.AddInMemoryRecipeConfiguration();
+
+        // Local DB Demo
+        var connectionString = builder.Configuration.GetConnectionString("Default");
+        builder.Services.AddLocalDbRecipeConfiguration(connectionString);
 
         var app = builder.Build();
 

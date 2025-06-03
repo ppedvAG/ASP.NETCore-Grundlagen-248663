@@ -4,7 +4,7 @@ namespace BusinessModel.Contracts;
 
 public interface IRecipeService
 {
-    Task Create(Recipe recipe);
+    Task<int> Create(Recipe recipe);
     Task<bool> Delete(int id);
     Task<IEnumerable<Recipe>> GetAll();
     Task<Recipe?> GetById(int id);

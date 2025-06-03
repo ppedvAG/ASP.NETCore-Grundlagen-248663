@@ -17,24 +17,24 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 
 ## M003 | Controller
 
--   [ ] Overview
--   [ ] Recipe Model erstellen
--   [ ] Recipe Controller erstellen
--   [ ] Api testen mit [httpFiles](https://learn.microsoft.com/en-us/aspnet/core/test/http-files)
+-   [x] Overview
+-   [x] Recipe Model erstellen
+-   [x] Recipe Controller erstellen
+-   [x] Api testen mit [httpFiles](https://learn.microsoft.com/en-us/aspnet/core/test/http-files)
 
 ## M004 | Model View Controller (MVC)
 
--   [ ] Overview
--   [ ] Links setzen
--   [ ] Index und Details
--   [ ] Lab: MovieService und MVC App mit Index und Details
+-   [x] Overview
+-   [x] Links setzen
+-   [x] Index und Details
+-   [x] Lab: MovieService und MVC App mit Index und Details
 
 ## M005 | Forms und Validierung
 
--   [ ] ViewModel Mapping
--   [ ] Form Post & Validierung
--   [ ] ModelState
--   [ ] Lab: Create Page für Movies erstellt
+-   [x] ViewModel Mapping
+-   [x] Form Post & Validierung
+-   [x] ModelState
+-   [x] Lab: Create Page für Movies erstellt
 
 ## M006 | FileServer erstellen
 

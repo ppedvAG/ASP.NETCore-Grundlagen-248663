@@ -22,12 +22,12 @@ public class SimpleRecipeService : IRecipeService
         return Task.FromResult(_recipes.FirstOrDefault(r => r.Id == id));
     }
 
-    public Task Create(Recipe recipe)
+    public Task<int> Create(Recipe recipe)
     {
         recipe.Id = _recipes.Max(r => r.Id) + 1;
 
         _recipes.Insert(0, recipe);
-        return Task.CompletedTask;
+        return Task.FromResult(recipe.Id);
     }
 
     public Task<bool> Update(Recipe recipe)
