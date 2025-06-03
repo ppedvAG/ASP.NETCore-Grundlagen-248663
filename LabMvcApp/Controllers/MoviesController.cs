@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LabMvcApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using MovieStore.Contracts;
 using MovieStore.Models;
+using System.Reflection;
 
 namespace LabMvcApp.Controllers
 {
@@ -37,16 +39,32 @@ namespace LabMvcApp.Controllers
         // POST: MoviesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CreateMovieViewModel model)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    var movie = new Movie
+                    {
+                        Title = model.Title,
+                        Description = model.Description,
+                        Genre = model.Genre,
+                        IMDBRating = model.IMDBRating,
+                        PublishedDate = model.Published,
+                        Price = model.Price
+                    };
+
+                    _movieService.AddMovie(movie);
+
+                    return RedirectToAction(nameof(Index));
+                }
             }
-            catch
+            catch(Exception)
             {
-                return View();
+                ModelState.AddModelError("", "Unable to create movie.");
             }
+            return View(model);
         }
 
         // GET: MoviesController/Edit/5
