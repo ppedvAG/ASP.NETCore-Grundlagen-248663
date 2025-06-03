@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabMvcApp", "LabMvcApp\LabM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModel.Tests", "BusinessModel.Tests\BusinessModel.Tests.csproj", "{48FF0B4A-2609-49E4-9109-52D8A7D8B9DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M009_EF-DbFirst", "M009_EF-DbFirst", "{9A1A12EF-BBCC-4212-B3F5-41E41EE0EF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindWebApp", "NorthwindWebApp\NorthwindWebApp.csproj", "{31E0D8A6-0DE7-458B-BFA7-E9E9787C9AC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,10 @@ Global
 		{48FF0B4A-2609-49E4-9109-52D8A7D8B9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48FF0B4A-2609-49E4-9109-52D8A7D8B9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48FF0B4A-2609-49E4-9109-52D8A7D8B9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E0D8A6-0DE7-458B-BFA7-E9E9787C9AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E0D8A6-0DE7-458B-BFA7-E9E9787C9AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E0D8A6-0DE7-458B-BFA7-E9E9787C9AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E0D8A6-0DE7-458B-BFA7-E9E9787C9AC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +115,7 @@ Global
 		{DD4F66CF-8137-172B-CED2-A42145366A9E} = {8FE9692B-5E6A-4480-8B33-242914A52866}
 		{911ACF70-4770-7781-9D47-849F72149442} = {FC7D2E55-DA8C-430D-A83A-BEA2946664C2}
 		{48FF0B4A-2609-49E4-9109-52D8A7D8B9DC} = {8FE9692B-5E6A-4480-8B33-242914A52866}
+		{31E0D8A6-0DE7-458B-BFA7-E9E9787C9AC3} = {9A1A12EF-BBCC-4212-B3F5-41E41EE0EF33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8DF09BE-FE25-4D34-B6EA-070D79C4A0B0}
