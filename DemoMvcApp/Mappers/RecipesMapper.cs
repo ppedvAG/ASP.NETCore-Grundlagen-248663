@@ -25,4 +25,24 @@ public static class RecipesMapper
             Tags = domainModel.Tags,
         };
     }
+
+    public static Recipe ToDomainModel(this CreateRecipeViewModel viewModel)
+    {
+        return new Recipe
+        {
+            Name = viewModel.Name,
+            Ingredients = viewModel.Ingredients != null ? viewModel.Ingredients.Split('\n') : [],
+            Instructions = viewModel.Instructions?.Split('\n') ?? [], // Kurzform von obiger Zeile
+            ImageUrl = viewModel.ImageUrl ?? "",
+            CaloriesPerServing = viewModel.CaloriesPerServing,
+            MealType = [viewModel.MealType.ToString()],
+            PrepTimeMinutes = viewModel.PrepTimeMinutes,
+            CookTimeMinutes = viewModel.CookTimeMinutes,
+            Cuisine = viewModel.Cuisine.ToString(),
+            Difficulty = viewModel.Difficulty,
+            Rating = viewModel.Rating,
+            Servings = viewModel.Servings,
+            Tags = viewModel.Tags?.Split(',') ?? [],
+        };
+    }
 }

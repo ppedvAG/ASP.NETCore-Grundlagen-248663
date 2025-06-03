@@ -7,11 +7,14 @@ namespace DemoMvcApp.Controllers
 {
     public class RecipesController : Controller
     {
+        private const string SummaryErrorKey = "";
         private readonly IRecipeService _recipeService;
+        private readonly ILogger<RecipesController> _logger;
 
-        public RecipesController(IRecipeService recipeService)
+        public RecipesController(IRecipeService recipeService, ILogger<RecipesController> logger)
         {
             _recipeService = recipeService;
+            _logger = logger;
         }
 
         // GET: RecipesController
@@ -41,16 +44,36 @@ namespace DemoMvcApp.Controllers
         // POST: RecipesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CreateRecipeViewModel model)
         {
-            try
+            // ModelState kommt von der Controller Basisklasse und
+            // enthält alle Informationen über den Status der Validierungen
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(IndexAsync));
-            }
-            catch
+                try
+                {
+                    _recipeService.Create(model.ToDomainModel());
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch(Exception ex)
+                {
+                    _logger.LogError(ex, "Fehler beim Erstellen des Rezepts");
+                    ModelState.AddModelError(SummaryErrorKey, ex.Message);
+                }
+
+            } 
+            else
             {
-                return View();
+                // Fehler sammeln und ausgeben
+                var errors = ModelState.Values.SelectMany(x => x.Errors)
+                    .Select(x => x.ErrorMessage);
+                ModelState.AddModelError(SummaryErrorKey, string.Join(Environment.NewLine, errors));
             }
+
+            // Bereits eingegebene Daten zurückgeben, 
+            // da sonst eingebene Daten verloren gehen
+            return View(model);
         }
 
         // GET: RecipesController/Edit/5

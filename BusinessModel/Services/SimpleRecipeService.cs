@@ -24,6 +24,8 @@ public class SimpleRecipeService : IRecipeService
 
     public Task Create(Recipe recipe)
     {
+        recipe.Id = _recipes.Max(r => r.Id) + 1;
+
         _recipes.Insert(0, recipe);
         return Task.CompletedTask;
     }
