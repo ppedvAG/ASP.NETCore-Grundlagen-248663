@@ -1,4 +1,5 @@
 using BusinessModel;
+using BusinessModel.Services;
 
 namespace DemoMvcApp;
 
@@ -13,6 +14,12 @@ public class Program
 
         // In Memory Demo
         //builder.Services.AddInMemoryRecipeConfiguration();
+
+        // File Upload Konfiguration
+        var config = builder.Configuration.GetSection("FileService");
+        builder.Services.Configure<FileServiceOptions>(config);
+        builder.Services.AddTransient<IFileService, RemoteFileService>();
+        builder.Services.AddHttpClient();
 
         // Local DB Demo
         var connectionString = builder.Configuration.GetConnectionString("Default");

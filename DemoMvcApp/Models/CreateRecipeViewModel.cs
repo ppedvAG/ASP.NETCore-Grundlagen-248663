@@ -10,6 +10,8 @@ public class CreateRecipeViewModel
     [MaxLength(100, ErrorMessage = "Name fuer das Rezept darf nicht mehr als 100 Zeichen haben")]
     public required string Name { get; set; }
 
+    public IFormFile? Image { get; set; }
+
     [Display(Name = "Zutaten")]
     public string? Ingredients { get; set; }
 
@@ -35,8 +37,6 @@ public class CreateRecipeViewModel
     public int CaloriesPerServing { get; set; }
 
     public string? Tags { get; set; }
-
-    public string? ImageUrl { get; set; }
 
     [Range(0, 5, ErrorMessage = "Die Bewertung muss zwischen 0 und 5 liegen")]
     public float Rating { get; set; } = 0;
