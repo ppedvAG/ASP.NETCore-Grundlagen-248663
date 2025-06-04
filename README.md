@@ -54,12 +54,12 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 
 ## M008 | EFCore: Code First & Testing
 
--   [ ] O/R Mapping Framework EFCore
--   [ ] Code First Ansatz (Entites + DbContext)
--   [ ] LocalDB verwenden (Kommandozeile: `sqllocaldb create|start|stop|info <instanceName>`)
--   [ ] [Testing Strategien gegen Datenbank](https://learn.microsoft.com/de-de/ef/core/testing/)
--   [ ] Seed erstellen und Abhängigkeiten modellieren
--   [ ] DB Migration 
+-   [x] O/R Mapping Framework EFCore
+-   [x] Code First Ansatz (Entites + DbContext)
+-   [x] LocalDB verwenden (Kommandozeile: `sqllocaldb create|start|stop|info <instanceName>`)
+-   [x] [Testing Strategien gegen Datenbank](https://learn.microsoft.com/de-de/ef/core/testing/)
+-   [x] Seed erstellen und Abhängigkeiten modellieren
+-   [x] DB Migration 
 
 ```bash
 // Package Manager Console aufrufen
@@ -71,17 +71,17 @@ Update-Database
 
 ```
 
--   [ ] Unit Tests mit EntityFramework
+-   [x] Unit Tests mit EntityFramework
 -   [ ] OrderService anhand von Tests entwickeln
 -   [ ] Dashboard fuer aktuelle Orders anzeigen
 
 ## M009 | Razor Pages & EF Core: DB First
 
--   [ ] Overview
--   [ ] [Northwind DB](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instnwnd.sql)
--   [ ] DB First Ansatz
--   [ ] VS Extension [EF Core Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools)
--   [ ] Controller mit Scaffolding erstellen (Microsoft.EntityFrameworkCore.Design)
+-   [x] Overview
+-   [x] [Northwind DB](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instnwnd.sql)
+-   [x] DB First Ansatz
+-   [x] VS Extension [EF Core Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools)
+-   [x] Controller mit Scaffolding erstellen (Microsoft.EntityFrameworkCore.Design)
 
 ## M010 | Razor Pages
 

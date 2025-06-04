@@ -1,81 +1,43 @@
-﻿using MovieStore.Contracts;
+﻿using LabMovieStore.Data;
+using MovieStore.Contracts;
 using MovieStore.Models;
 
 namespace MovieStore.Services;
 
 public class CinemaService : ICinemaService
 {
-    private readonly IList<Cinema> _cinemas =
-    [
-        new Cinema
-        {
-            Id = 1,
-            Name = "Cinema Paradiso",
-            Address = "Musterstraße 1",
-            City = "Berlin",
-            Description = "Modernes Kino mit 8 Sälen, 3D-Technik und Lounge-Bereich.",
-            NumberOfHalls = 8,
-            TotalSeats = 1200,
-            PhoneNumber = "030-12345678",
-            WebsiteUrl = "https://www.cinema-paradiso.de",
-            ImageUrl = "https://www.cinema-paradiso.de/Cinema_Paradiso.jpg"
-        },
-        new Cinema
-        {
-            Id = 2,
-            Name = "Filmtheater Stern",
-            Address = "Hauptstraße 99",
-            City = "Hamburg",
-            Description = "Traditionsreiches Programmkino mit besonderem Flair.",
-            NumberOfHalls = 3,
-            TotalSeats = 350,
-            PhoneNumber = "040-98765432",
-            WebsiteUrl = "https://www.filmtheater-stern.de",
-            ImageUrl = "https://www.filmtheater-stern.de/Filmtheater_Stern.jpg"
-        },
-        new Cinema
-        {
-            Id = 3,
-            Name = "Lichtspielhaus am See",
-            Address = "Seepromenade 10",
-            City = "München",
-            Description = "Kino direkt am Wasser mit Open-Air-Veranstaltungen im Sommer.",
-            NumberOfHalls = 5,
-            TotalSeats = 700,
-            PhoneNumber = "089-24681012",
-            WebsiteUrl = "https://www.lichtspielhaus-am-see.de",
-            ImageUrl = "https://www.lichtspielhaus-am-see.de/Lichtspielhaus_am_See.jpg"
-        }
-    ];
+    private readonly MovieDbContext _context;
 
-    public IList<Cinema> GetCinemas()
+    public CinemaService(MovieDbContext context)
     {
-        return _cinemas;
+        _context = context;
     }
 
     public Cinema? GetById(int id)
     {
-        return _cinemas.FirstOrDefault(c => c.Id == id);
+        return _context.Cinemas.FirstOrDefault(m => m.Id == id);
     }
 
-    public void AddCinema(Cinema cinema)
+    public IList<Cinema> GetCinemas()
     {
-        cinema.Id = _cinemas.Max(c => c.Id) + 1;
-        _cinemas.Add(cinema);
+        return _context.Cinemas.ToList();
     }
 
-    public void UpdateCinema(Cinema cinema)
+    public void AddCinema(Cinema movie)
     {
-        var existing = _cinemas.FirstOrDefault(c => c.Id == cinema.Id);
-        if (existing != null)
-        {
-            _cinemas.Remove(existing);
-            _cinemas.Add(cinema);
-        }
+        _context.Cinemas.Add(movie);
+        _context.SaveChanges();
     }
 
-    public void RemoveCinema(Cinema cinema)
+    public void RemoveCinema(Cinema movie)
     {
-        _cinemas.Remove(cinema);
+        _context.Cinemas.Remove(movie);
+        _context.SaveChanges();
+    }
+
+    public void UpdateCinema(Cinema movie)
+    {
+        _context.Cinemas.Update(movie);
+        _context.SaveChanges();
     }
 }

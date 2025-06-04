@@ -1,17 +1,23 @@
+using LabMovieStore.Data;
+using Microsoft.EntityFrameworkCore;
 using MovieStore.Contracts;
 using MovieStore.Services;
 
-namespace LabMvcApp
+namespace LabMovieDbApp
 {
     public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddSingleton<IMovieService, InMemoryMovieService>();
-            builder.Services.AddSingleton<ICinemaService, InMemoryCinemaService>();
 
             // Add services to the container.
+            builder.Services.AddDbContext<MovieDbContext>(options => 
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
+                );
+            builder.Services.AddTransient<IMovieService, MovieService>();
+            builder.Services.AddTransient<ICinemaService, CinemaService>();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
