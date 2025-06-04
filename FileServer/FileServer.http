@@ -1,0 +1,36 @@
+@FileServer_HostAddress = https://localhost:7270
+
+GET {{FileServer_HostAddress}}/files/
+Accept: application/json
+
+###
+
+POST {{FileServer_HostAddress}}/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="test.txt"
+Content-Type: text/plain
+
+Dies ist der Inhalt der Testdatei.
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+POST {{FileServer_HostAddress}}/upload
+X-API-Key: 7F12CA09-0EE3-461B-8BA2-3059E3A855CD
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="test.html"
+Content-Type: text/plain
+
+Dies ist der Inhalt der Testdatei. 
+<script>alert("XSS")</script>
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+GET {{FileServer_HostAddress}}/download/test.txt
+
+###

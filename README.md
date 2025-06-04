@@ -83,18 +83,12 @@ Update-Database
 -   [x] VS Extension [EF Core Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools)
 -   [x] Controller mit Scaffolding erstellen (Microsoft.EntityFrameworkCore.Design)
 
-## M010 | Razor Pages
-
--   [ ] Overview
--   [ ] Links setzen
--   [ ] Details
-
 ## M010 | Benutzerverwaltung
 
--   [ ] AspNetCore.Identity.EFCore
--   [ ] CodeFirst & Migration
--   [ ] UserManager & SignInManager
--   [ ] Form Post & Validierung
+-   [x] AspNetCore.Identity.EFCore
+-   [x] CodeFirst & Migration
+-   [x] UserManager & SignInManager
+-   [x] Form Post & Validierung
 -   [ ] MS Identity Platform gegen EntraId und GraphAPI
 
 ## M011 | Weitere Themen
