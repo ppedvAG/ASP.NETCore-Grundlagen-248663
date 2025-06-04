@@ -1,6 +1,7 @@
 ﻿using BusinessModel.Contracts;
 using BusinessModel.Data;
 using BusinessModel.Models;
+using System.Threading;
 
 namespace BusinessModel.Services;
 
@@ -52,7 +53,7 @@ public class SimpleRecipeService : IRecipeService
         return Task.FromResult(false);
     }
 
-    public Task<int> CreateWithImage(Recipe recipe, string fileName, Stream stream)
+    public Task<int> CreateWithImage(Recipe recipe, string fileName, Stream stream, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }

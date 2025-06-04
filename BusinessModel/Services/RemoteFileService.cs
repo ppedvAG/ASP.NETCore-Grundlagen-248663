@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Net.Http.Headers;
 using System.Net.Mime;
 
@@ -14,8 +15,9 @@ public class FileServiceOptions
 public class RemoteFileService : IFileService
 {
     private readonly HttpClient _httpClient;
+    private readonly ILogger<RemoteFileService> _logger;
 
-    public RemoteFileService(IOptions<FileServiceOptions> options, HttpClient httpClient)
+    public RemoteFileService(IOptions<FileServiceOptions> options, HttpClient httpClient, ILogger<RemoteFileService> logger)
     {
         if (string.IsNullOrEmpty(options.Value.BaseUrl) || string.IsNullOrEmpty(options.Value.ApiKey))
         {
@@ -23,11 +25,12 @@ public class RemoteFileService : IFileService
         }
 
         _httpClient = httpClient;
+        _logger = logger;
         _httpClient.BaseAddress = new Uri(options.Value.BaseUrl);
         _httpClient.DefaultRequestHeaders.Add("X-API-Key", options.Value.ApiKey);
     }
 
-    public async Task<string> UploadFile(string fileName, Stream stream)
+    public async Task<string?> UploadFile(string fileName, Stream stream, CancellationToken cancellationToken = default)
     {
         var content = new StreamContent(stream);
         content.Headers.ContentType = new MediaTypeHeaderValue(MediaTypeNames.Application.Octet);
@@ -37,7 +40,7 @@ public class RemoteFileService : IFileService
 
         try
         {
-            var response = await _httpClient.PostAsync("upload", formContent);
+            var response = await _httpClient.PostAsync("upload", formContent, cancellationToken);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -47,10 +50,17 @@ public class RemoteFileService : IFileService
             var url = await response.Content.ReadAsStringAsync();
             return url;
         }
-        catch (Exception)
+        catch (TaskCanceledException ex)
         {
-
-            throw;
+            if (!cancellationToken.IsCancellationRequested)
+            {
+                _logger.LogError(ex, "Timeout beim Hochladen der Datei {FileName}", fileName);
+            }
+            else
+            {
+                _logger.LogError(ex, "Hochladen der Datei {FileName} abgebrochen", fileName);
+            }
+            return null;
         }
     }
 }

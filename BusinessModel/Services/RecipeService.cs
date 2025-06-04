@@ -34,9 +34,9 @@ public class RecipeService : IRecipeService
         return recipe.Id;
     }
 
-    public async Task<int> CreateWithImage(Recipe recipe, string fileName, Stream stream)
+    public async Task<int> CreateWithImage(Recipe recipe, string fileName, Stream stream, CancellationToken cancellationToken = default)
     {
-        recipe.ImageUrl = await _fileService.UploadFile(fileName, stream);
+        recipe.ImageUrl = await _fileService.UploadFile(fileName, stream, cancellationToken);
         return await Create(recipe);
     }
 

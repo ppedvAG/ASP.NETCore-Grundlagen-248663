@@ -46,7 +46,7 @@ namespace DemoMvcApp.Controllers
         // POST: RecipesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateRecipeViewModel model)
+        public async Task<ActionResult> CreateAsync(CreateRecipeViewModel model, CancellationToken cancellationToken)
         {
             // ModelState kommt von der Controller Basisklasse und
             // enthält alle Informationen über den Status der Validierungen
@@ -57,12 +57,14 @@ namespace DemoMvcApp.Controllers
                     if (model.Image != null)
                     {
                         var fileName = model.Image.FileName;
-                        using var stream = model.Image.OpenReadStream();
-                        _recipeService.CreateWithImage(model.ToDomainModel(), fileName, stream);
+                        using (var stream = model.Image.OpenReadStream())
+                        {
+                            await _recipeService.CreateWithImage(model.ToDomainModel(), fileName, stream, cancellationToken);
+                        }
                     }
                     else
                     {
-                        _recipeService.Create(model.ToDomainModel());
+                        await _recipeService.Create(model.ToDomainModel());
                     }
 
                     return RedirectToAction(nameof(Index));
