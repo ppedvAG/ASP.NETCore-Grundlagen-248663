@@ -27,6 +27,7 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 -   [x] Overview
 -   [x] Links setzen
 -   [x] Index und Details
+-   [x] Layout: [Bootstrap Examples](https://getbootstrap.com/docs/4.0/examples/)
 -   [x] Lab: MovieService und MVC App mit Index und Details
 
 ## M005 | Forms und Validierung
