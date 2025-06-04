@@ -1,11 +1,11 @@
 ﻿using BusinessModel.Contracts;
 using BusinessModel.Data;
-using DemoMvcApp.Mappers;
-using DemoMvcApp.Models;
+using DemoMvcAuthApp.Mappers;
+using DemoMvcAuthApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoMvcApp.Controllers
+namespace DemoMvcAuthApp.Controllers
 {
     [Authorize] // Fuer gesamten Controller sperren
     public class RecipesController : Controller
@@ -58,7 +58,16 @@ namespace DemoMvcApp.Controllers
             {
                 try
                 {
-                    _recipeService.Create(model.ToDomainModel());
+                    if (model.Image != null)
+                    {
+                        var fileName = model.Image.FileName;
+                        using var stream = model.Image.OpenReadStream();
+                        _recipeService.CreateWithImage(model.ToDomainModel(), fileName, stream);
+                    }
+                    else
+                    {
+                        _recipeService.Create(model.ToDomainModel());
+                    }
 
                     return RedirectToAction(nameof(Index));
                 }

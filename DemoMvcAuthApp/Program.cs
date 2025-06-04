@@ -1,8 +1,9 @@
 using BusinessModel;
 using BusinessModel.Data;
+using BusinessModel.Services;
 using Microsoft.AspNetCore.Identity;
 
-namespace DemoMvcApp;
+namespace DemoMvcAuthApp;
 
 public class Program
 {
@@ -19,6 +20,12 @@ public class Program
         // Local DB Demo
         var connectionString = builder.Configuration.GetConnectionString("Default");
         builder.Services.AddLocalDbRecipeConfiguration(connectionString);
+
+        // File Upload Konfiguration
+        var config = builder.Configuration.GetSection("FileService");
+        builder.Services.Configure<FileServiceOptions>(config);
+        builder.Services.AddTransient<IFileService, RemoteFileService>();
+        builder.Services.AddHttpClient();
 
         // Registrierungen fuer Benutzerverwaltung
         // AddIdentity ist generisch, weil wir somit diese Tabellen mit eigenen Properties erweitern koennten

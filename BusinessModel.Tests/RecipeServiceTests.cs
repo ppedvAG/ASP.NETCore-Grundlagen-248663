@@ -15,7 +15,7 @@ namespace BusinessModel.Tests
             using (var context = new TestDatabase().Context)
             {
                 // Arrange
-                var sut = new RecipeService(context);
+                var sut = new RecipeService(context, null);
 
                 // Act
                 var result = await sut.GetAll();

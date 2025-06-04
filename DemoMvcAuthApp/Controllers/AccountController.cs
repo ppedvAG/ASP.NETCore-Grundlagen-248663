@@ -1,9 +1,9 @@
 ﻿using BusinessModel.Data;
-using DemoMvcApp.Models;
+using DemoMvcAuthApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoMvcApp.Controllers
+namespace DemoMvcAuthApp.Controllers
 {
     public class AccountController : Controller
     {

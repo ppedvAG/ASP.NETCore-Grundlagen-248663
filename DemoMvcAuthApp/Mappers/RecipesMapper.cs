@@ -1,7 +1,7 @@
 ﻿using BusinessModel.Models;
-using DemoMvcApp.Models;
+using DemoMvcAuthApp.Models;
 
-namespace DemoMvcApp.Mappers;
+namespace DemoMvcAuthApp.Mappers;
 
 public static class RecipesMapper
 {
@@ -33,7 +33,6 @@ public static class RecipesMapper
             Name = viewModel.Name,
             Ingredients = viewModel.Ingredients != null ? viewModel.Ingredients.Split('\n') : [],
             Instructions = viewModel.Instructions?.Split('\n') ?? [], // Kurzform von obiger Zeile
-            ImageUrl = viewModel.ImageUrl ?? "",
             CaloriesPerServing = viewModel.CaloriesPerServing,
             MealType = [viewModel.MealType.ToString()],
             PrepTimeMinutes = viewModel.PrepTimeMinutes,

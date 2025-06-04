@@ -1,8 +1,8 @@
-using DemoMvcApp.Models;
+using DemoMvcAuthApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace DemoMvcApp.Controllers
+namespace DemoMvcAuthApp.Controllers
 {
     public class HomeController : Controller
     {

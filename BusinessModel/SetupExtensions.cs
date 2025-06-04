@@ -1,6 +1,7 @@
 ﻿using BusinessModel.Contracts;
 using BusinessModel.Data;
 using BusinessModel.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BusinessModel;

@@ -8,10 +8,12 @@ namespace BusinessModel.Services;
 public class RecipeService : IRecipeService
 {
     private readonly DemoMvcDbContext _context;
+    private readonly IFileService _fileService;
 
-    public RecipeService(DemoMvcDbContext context)
+    public RecipeService(DemoMvcDbContext context, IFileService fileService)
     {
         _context = context;
+        _fileService = fileService;
     }
 
     public async Task<IEnumerable<Recipe>> GetAll()
@@ -30,6 +32,12 @@ public class RecipeService : IRecipeService
         await _context.SaveChangesAsync();
 
         return recipe.Id;
+    }
+
+    public async Task<int> CreateWithImage(Recipe recipe, string fileName, Stream stream)
+    {
+        recipe.ImageUrl = await _fileService.UploadFile(fileName, stream);
+        return await Create(recipe);
     }
 
     public async Task<bool> Delete(int id)

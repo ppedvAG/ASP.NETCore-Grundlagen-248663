@@ -51,4 +51,9 @@ public class SimpleRecipeService : IRecipeService
         }
         return Task.FromResult(false);
     }
+
+    public Task<int> CreateWithImage(Recipe recipe, string fileName, Stream stream)
+    {
+        throw new NotImplementedException();
+    }
 }
