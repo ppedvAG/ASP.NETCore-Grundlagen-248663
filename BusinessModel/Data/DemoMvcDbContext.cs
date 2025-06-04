@@ -1,10 +1,11 @@
 ﻿using BusinessModel.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace BusinessModel.Data;
 
-public class DemoMvcDbContext : DbContext
+public class DemoMvcDbContext : IdentityDbContext
 {
     public DbSet<Recipe> Recipes { get; set; }
     public DbSet<Order> Orders { get; set; }
@@ -17,9 +18,12 @@ public class DemoMvcDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Wenn wir den IdentityDbContext verwenden, muss hier die Basisklasse aufgerufen werden!
         base.OnModelCreating(modelBuilder);
 
         Seed.SeedData(modelBuilder);
+
+        Seed.SeedIdentity(modelBuilder);
 
         #region Alternative zu DataAnnotations
 
